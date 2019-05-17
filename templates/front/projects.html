@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load compress static hc_extras %}
+
+{% block title %}{% site_name %}{% endblock %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <h1 class="settings-title">
+            My Projects
+
+            <div class="pull-right">
+                <button
+                    class="btn btn-primary"
+                    data-toggle="modal"
+                    data-target="#add-project-modal">Create New Project</button>
+            </div>
+        </h1>
+
+        <div id="project-selector" class="row">
+            {% for project in projects %}
+            <a href="{% url 'hc-checks' project.code %}">
+                <div class="col-sm-6 col-md-4">
+                    <div class="panel project {% if project == request.profile.current_project %}selected{% endif %}">
+                        <div class="status icon-{{ project.overall_status }}"></div>
+
+                        <h4>{{ project }}</h4>
+
+                        <div>
+                            {% with project.check_set.count as n %}
+                            {{ n }} check{{ n|pluralize }},
+                            {% endwith %}
+
+                            {% with project.channel_set.count as n %}
+                            {{ n }} integration{{ n|pluralize }}
+                            {% endwith %}
+                        </div>
+                        <div class="text-muted">
+                            {{ project.owner.email }}
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+            {% empty %}
+            <div class="col-sm-12">
+                <p>You do not have any projects.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% include "accounts/add_project_modal.html" %}
+
+{% endblock %}
+
+{% block scripts %}
+{% compress js %}
+<script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/project.js' %}"></script>
+{% endcompress %}
+{% endblock %}

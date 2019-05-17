@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load hc_extras %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-sm-2">
+
+    <ul class="docs-nav">
+        <li {% if section == "home" %} class="active" {% endif %}>
+            <a href="{% url 'hc-docs' %}">How {% site_name %} Works</a>
+        </li>
+        <li {% if section == "api" %} class="active" {% endif %}>
+            <a href="{% url 'hc-docs-api' %}">API Reference</a>
+        </li>
+        <li {% if section == "cron" %} class="active" {% endif %}>
+            <a href="{% url 'hc-docs-cron' %}">Cron Syntax</a>
+        </li>
+        <li {% if section == "resources" %} class="active" {% endif %}>
+            <a href="{% url 'hc-docs-resources' %}">Third-Party Resources</a>
+        </li>
+    </ul>
+
+    </div>
+    <div class="col-sm-10">
+        {% block docs_content %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}

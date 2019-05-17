@@ -1,0 +1,117 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 140px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 81px;
+    line-height: 80px;
+    color: #AAA;
+    border-top: 1px solid #eee;
+}
+
+.footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: small;
+}
+
+.footer li {
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+
+#logo {
+    max-height: 50px;
+    margin-top: -16px;
+}
+
+#nav-main-sections > li > a {
+    text-transform: uppercase;
+    font-size: small;
+}
+
+@media (min-width: 768px) {
+    .navbar-default .navbar-nav > li.active > a, .navbar-default .navbar-nav > li > a:hover {
+        border-bottom: 5px solid #eee;
+        padding-bottom: 25px;
+    }
+}
+
+.navbar-text {
+    font-size: small;
+}
+
+.page-checks .container-fluid, .page-details .container-fluid {
+    /* Fluid below 1320px, but max width capped to 1320px ... */
+    max-width: 1320px;
+}
+
+.status {
+    font-size: 24px;
+    display: inline-block;
+    width: 24px;
+}
+
+.status.icon-up, .status.icon-started { color: #5cb85c; }
+.status.icon-new, .status.icon-paused { color: #CCC; }
+.status.icon-grace { color: #f0ad4e; }
+.status.icon-down { color: #d9534f; }
+
+.label-start {
+    background-color: #FFF;
+    color: #117a3f;;
+    border: 1px solid #117a3f;
+}
+
+.label-ign {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.hc-dialog {
+    background: #FFF;
+    padding: 2em;
+    margin-top: 100px;
+}
+
+.hc-dialog h1 {
+    margin: 0;
+}
+
+.dialog-body {
+    margin: 24px 0;
+}
+
+pre {
+  border: 0;
+}
+
+.nav-pills > li > a {
+    color: #888;
+}
+
+.jumbotron p {
+    font-weight: 300;
+}
+
+#debug-warning {
+    background: #eeeeee;
+    text-align: center;
+    font-size: small;
+    padding: 2px 0;
+}
+
+.badge-down {
+    background-color: #d9534f;
+}

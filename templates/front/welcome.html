@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load compress hc_extras humanize static %}
+
+{% block description %}
+    <meta name="description" content="Cron Monitoring. Monitor nightly backups, weekly reports, cron jobs and background tasks. Receive alerts when your tasks don't run on time.">
+{% endblock %}
+
+{% block containers %}
+<div class="index-bleed">
+<div class="container">
+    <div class="row">
+    <div class="col-sm-12">
+        <h1 id="pitch">SkyCTL Server Monitoring</h1>
+    </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% compress js %}
+<script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/clipboard.min.js' %}"></script>
+<script src="{% static 'js/snippet-copy.js' %}"></script>
+<script src="{% static 'js/signup.js' %}"></script>
+{% endcompress %}
+{% endblock %}

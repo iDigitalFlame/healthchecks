@@ -1,0 +1,13 @@
+.field-projects ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.field-projects ul li {
+    list-style-type: none;
+}
+
+.field-email span {
+    border-bottom: 2px solid #FFEB3B;
+}

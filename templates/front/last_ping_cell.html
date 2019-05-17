@@ -1,0 +1,10 @@
+{% load humanize %}
+
+{% if check.last_ping %}
+    {{ check.last_ping|naturaltime }}
+    {% if check.has_confirmation_link %}
+    <br /><span class="label label-confirmation">confirmation link</span>
+    {% endif %}
+{% else %}
+    Never
+{% endif %}
